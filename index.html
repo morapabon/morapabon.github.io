@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+#wrapper {
+  display: flex;
+}
+#left {
+  flex: 0 0 67%;
+}
+#right {
+  flex: 1;
+}
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Garage Sale</h2>
+
+<div id="wrapper">
+<div id="left" class="slideshow-container">
+  <div class="mySlides1">    
+	<img src="images/sku1-a.jpg" style="width:80%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="images/sku1-b.jpg" style="width:80%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="images/sku1-c.jpg" style="width:80%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+	<div id="right">Decantador V-60 para preparar café + 300 hojas de filtro (20-15)
+Decantador de vidrio para preparar café (700 ml) con banda de silicona extraíble es agradable al tacto y fácil de lavar, para proteger del calor, incluye 300 hojas de filtro.
+4.3 x 3.9 x 4.2 pulgadas</div>
+</div>
+<br/><br/>
+
+<div id="wrapper">
+<div id="left" class="slideshow-container">
+  <div class="mySlides2">
+    <img src="images/sku2-a.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="images/sku2-b.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="images/sku2-c.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+	<div id="right">Radio reproductor Sony (35,30)
+Equipo de sonido Sony
+
+Reproductor de CD, CD-R/RW y MP3
+Radio AM/ FM radio
+Lector de iPad, iPod (1G) y iPhone (5G)
+Speakers de alto alcance
+Entradas auxiliares para otros dispositivos
+Dimensiones: 17.8 x 5.5 x 8.4 pulgadas</div>
+</div>
+
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html> 
